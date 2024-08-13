@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Tic-Tac-Toe Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Opis projektu
 
-## Available Scripts
+Tic-Tac-Toe Redux to nowoczesna aplikacja do gry w kółko i krzyżyk (Tic-Tac-Toe), stworzona za pomocą Reacta, Reduxa, Styled Components oraz przeciwnika AI. Aplikacja posiada ciemny motyw z neonowym designem i możliwość gry na siatce 4x4 (możliwość dostosowania na inne rozmiary, np. 5x5). AI wykonuje losowe ruchy, co dodaje elementu rywalizacji, gdy gracz zmierza się z komputerem.
 
-In the project directory, you can run:
+## Technologie
 
-### `npm start`
+- **React**: Do budowy interfejsu użytkownika.
+- **Redux**: Do zarządzania stanem gry.
+- **Styled Components**: Do stylizacji komponentów z nowoczesnym, neonowym designem.
+- **Redux Toolkit**: Ułatwienie zarządzania stanem.
+- **AI**: Prosty algorytm AI wykonujący losowe ruchy.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Funkcje
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Dwuosobowy tryb gry**: Gracz X kontra Gracz O.
+- **Przeciwnik AI**: Gra przeciwko prostemu przeciwnikowi AI.
+- **Nowoczesny interfejs**: Ciemny motyw z neonowymi efektami.
+- **Obsługa większej siatki**: Rozgrywka na siatce 4x4 (możliwość rozszerzenia na 5x5 i inne).
 
-### `npm test`
+## Instalacja i uruchomienie
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Wymagania
 
-### `npm run build`
+- **Node.js** (v12 lub nowsza)
+- **npm** (v6 lub nowsza)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Krok 1: Klonowanie repozytorium
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Zacznij od sklonowania tego repozytorium na swój lokalny komputer:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/twoj-nazwa-uzytkownika/tic-tac-toe-redux.git
+cd tic-tac-toe-redux
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Krok 2: Instalacja zależności
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Zainstaluj wszystkie wymagane zależności za pomocą npm:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Krok 3: Uruchomienie aplikacji
 
-## Learn More
+Aby uruchomić aplikację w trybie deweloperskim, użyj poniższego polecenia:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Aplikacja powinna automatycznie otworzyć się w przeglądarce pod adresem http://localhost:3000.
+Krok 4: Budowanie aplikacji do produkcji
 
-### Code Splitting
+Aby zbudować aplikację gotową do wdrożenia w środowisku produkcyjnym:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm run build
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+npm run build
 
-### Making a Progressive Web App
+Spowoduje to wygenerowanie zoptymalizowanej wersji aplikacji w folderze build.
+Jak działa aplikacja
+Mechanika gry
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    Gracze na zmianę klikają pola na siatce 4x4. Gracz X zaczyna jako pierwszy.
+    Po każdym ruchu sprawdzany jest stan gry w celu wykrycia zwycięzcy lub remisu.
+    Przeciwnik AI wykonuje ruch losowy, gdy przychodzi jego kolej.
+    Można rozpocząć nową grę za pomocą przycisku "Reset".
 
-### Advanced Configuration
+Struktura projektu
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    src/store/gameSlice.js: Zarządzanie stanem gry (przechowuje stan planszy, ruchy graczy, AI, wygrywający stan itp.).
+    src/components/Board.js: Główny komponent wyświetlający planszę i zarządzający logiką gry.
+    src/components/Square.js: Pojedyncze pole na planszy.
+    src/GlobalStyles.js: Definiuje globalne style aplikacji (ciemny motyw, czcionki itp.).
+    src/store/store.js: Konfiguracja Reduxa i przechowywanie stanu.
 
-### Deployment
+Rozszerzenia
+Przeciwnik AI
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+AI w tej wersji wykonuje ruchy losowe. Można rozwinąć logikę AI, aby było bardziej zaawansowane, np. implementując algorytmy takie jak minimax.
+Większe siatki
 
-### `npm run build` fails to minify
+Gra jest skonfigurowana do działania na siatce 4x4, ale można łatwo dostosować ją do większych siatek, zmieniając rozmiary siatki w gameSlice.js i Board.js.
+Animacje
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Komponenty są zaprojektowane z użyciem animacji i efektów transformacji, aby poprawić wrażenia użytkownika. Można je rozbudować, aby dodać więcej efektów wizualnych.
+```
